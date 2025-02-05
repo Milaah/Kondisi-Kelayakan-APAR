@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kondisi Kelayakan APAR</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(to right, red, orange);
+            padding: 20px;
+            font-size: 24px;
+        }
+        .slider {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid orange;
+            padding: 20px;
+            box-shadow: 0 0 15px red;
+        }
+        .slide {
+            display: none;
+            font-size: 20px;
+            padding: 40px;
+            background: rgba(255, 69, 0, 0.8);
+            border-radius: 10px;
+        }
+        .slide:first-child {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid white;
+            padding: 10px;
+        }
+        a {
+            color: yellow;
+            text-decoration: none;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: linear-gradient(to right, orange, red);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kondisi Kelayakan APAR</h1>
+    </header>
+    
+    <section class="slider">
+        <div class="slide" id="slide1">Jenis APAR yang Dipindai dari QR Barcode</div>
+        <div class="slide" id="slide2">Gambar 3 Jenis APAR: CO2, Foam, Powder</div>
+        <div class="slide" id="slide3">Denah Posisi APAR di Perusahaan</div>
+        <div class="slide" id="slide4">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>No Inventaris APAR</th>
+                        <th>Jenis APAR</th>
+                        <th>Berat APAR</th>
+                        <th>Ketersediaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>APAR001</td>
+                        <td>CO2</td>
+                        <td>5 kg</td>
+                        <td>Tersedia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="slide" id="slide5">Terima kasih telah menggunakan sistem ini!</div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Sistem Monitoring APAR</p>
+    </footer>
+    
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[index].style.display = 'block';
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
